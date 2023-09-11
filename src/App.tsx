@@ -27,7 +27,7 @@ class App extends Component {
             <Route path="/register" element={<Register />} />
             <Route path="/404" element={<Page404 />} />
             <Route path="/500" element={<Page500 />} />
-            <Route path="*" element={<Login />} />
+            <Route path="*" element={<DefaultLayout />} />
           </Routes>
         </Suspense>
       </HashRouter>

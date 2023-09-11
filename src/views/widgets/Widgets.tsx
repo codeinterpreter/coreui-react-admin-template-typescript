@@ -35,7 +35,7 @@ import WidgetsBrand from './WidgetsBrand'
 import WidgetsDropdown from './WidgetsDropdown'
 
 const Widgets = () => {
-  const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+  const random = (min: number, max:number) => Math.floor(Math.random() * (max - min + 1) + min)
 
   return (
     <CCard className="mb-4">
@@ -761,7 +761,7 @@ const Widgets = () => {
           </CRow>
         </DocsExample>
         <DocsExample href="/components/widgets/#cwidgetstatsd">
-          <WidgetsBrand />
+          <WidgetsBrand withCharts />
         </DocsExample>
         <DocsExample href="/components/widgets/#cwidgetstatsd">
           <WidgetsBrand withCharts />

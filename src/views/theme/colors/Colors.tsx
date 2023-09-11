@@ -1,19 +1,25 @@
 import PropTypes from 'prop-types'
-import React, { useEffect, useState, createRef } from 'react'
+import React, {useEffect, useState, createRef, useRef, ReactNode} from 'react'
 import classNames from 'classnames'
 import { CRow, CCol, CCard, CCardHeader, CCardBody } from '@coreui/react'
 import { rgbToHex } from '@coreui/utils'
 import { DocsLink } from '../../../components'
 
+interface ThemeColorProps {
+  className?: string;
+  children?: ReactNode;
+}
 const ThemeView = () => {
   const [color, setColor] = useState('rgb(255, 255, 255)')
-  const ref = createRef()
+  const ref = useRef<HTMLTableElement>(null); // Specify the type here
 
   useEffect(() => {
-    const el = ref.current.parentNode.firstChild
-    const varColor = window.getComputedStyle(el).getPropertyValue('background-color')
-    setColor(varColor)
-  }, [ref])
+    if (ref.current) {
+      const el = ref.current.parentNode!.firstChild as HTMLElement; // Add type assertion if needed
+      const varColor = window.getComputedStyle(el).getPropertyValue('background-color');
+      setColor(varColor);
+    }
+  }, [ref]);
 
   return (
     <table className="table w-100" ref={ref}>
@@ -31,16 +37,16 @@ const ThemeView = () => {
   )
 }
 
-const ThemeColor = ({ className, children }) => {
-  const classes = classNames(className, 'theme-color w-75 rounded mb-3')
+const ThemeColor: React.FC<ThemeColorProps> = ({ className, children }) => {
+  const classes = classNames(className, 'theme-color w-75 rounded mb-3');
   return (
     <CCol xs={12} sm={6} md={4} xl={2} className="mb-4">
       <div className={classes} style={{ paddingTop: '75%' }}></div>
       {children}
       <ThemeView />
     </CCol>
-  )
-}
+  );
+};
 
 ThemeColor.propTypes = {
   children: PropTypes.node,

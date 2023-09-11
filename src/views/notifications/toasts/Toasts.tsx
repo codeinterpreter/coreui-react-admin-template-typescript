@@ -15,10 +15,10 @@ import {
 import { DocsExample } from '../../../components'
 
 const ExampleToast = () => {
-  const [toast, addToast] = useState(0)
-  const toaster = useRef()
+  const [toastElement, setToastElement] = useState<React.ReactElement | undefined>(undefined);
+  const toaster = useRef(null);
   const exampleToast = (
-    <CToast title="CoreUI for React.js">
+    <CToast >
       <CToastHeader closeButton>
         <svg
           className="rounded me-2"
@@ -37,10 +37,14 @@ const ExampleToast = () => {
       <CToastBody>Hello, world! This is a toast message.</CToastBody>
     </CToast>
   )
+  const handleButtonClick = () => {
+    setToastElement(exampleToast);
+  };
+
   return (
     <>
-      <CButton onClick={() => addToast(exampleToast)}>Send a toast</CButton>
-      <CToaster ref={toaster} push={toast} placement="top-end" />
+      <CButton onClick={handleButtonClick}>Send a toast</CButton>
+      <CToaster ref={toaster} push={toastElement} placement="top-end" />
     </>
   )
 }
@@ -60,7 +64,7 @@ const Toasts = () => {
               dismiss button.
             </p>
             <DocsExample href="components/toast">
-              <CToast title="CoreUI for React.js" autohide={false} visible={true}>
+              <CToast autohide={false} visible={true}>
                 <CToastHeader closeButton>
                   <svg
                     className="rounded me-2"
@@ -94,7 +98,7 @@ const Toasts = () => {
             </p>
             <DocsExample href="components/toast#translucent">
               <div className="bg-dark p-3">
-                <CToast title="CoreUI for React.js" autohide={false} visible={true}>
+                <CToast autohide={false} visible={true}>
                   <CToastHeader closeButton>
                     <svg
                       className="rounded me-2"
@@ -129,7 +133,7 @@ const Toasts = () => {
             </p>
             <DocsExample href="components/toast#stacking">
               <CToaster>
-                <CToast title="CoreUI for React.js" autohide={false} visible={true}>
+                <CToast  autohide={false} visible={true}>
                   <CToastHeader closeButton>
                     <svg
                       className="rounded me-2"
@@ -147,7 +151,7 @@ const Toasts = () => {
                   </CToastHeader>
                   <CToastBody>Hello, world! This is a toast message.</CToastBody>
                 </CToast>
-                <CToast title="CoreUI for React.js" autohide={false} visible={true}>
+                <CToast autohide={false} visible={true}>
                   <CToastHeader closeButton>
                     <svg
                       className="rounded me-2"

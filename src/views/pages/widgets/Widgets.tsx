@@ -764,7 +764,7 @@ const Widgets = () => {
           </CRow>
         </DocsExample>
         <DocsExample href="/components/widgets/#cwidgetstatsd">
-          <WidgetsBrand />
+          <WidgetsBrand withCharts={false} />
         </DocsExample>
         <DocsExample href="/components/widgets/#cwidgetstatsd">
           <WidgetsBrand withCharts />

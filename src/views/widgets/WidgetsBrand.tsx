@@ -5,7 +5,7 @@ import CIcon from '@coreui/icons-react'
 import { cibFacebook, cibLinkedin, cibTwitter, cilCalendar } from '@coreui/icons'
 import { CChart } from '@coreui/react-chartjs'
 
-const WidgetsBrand = ({ withCharts }) => {
+const WidgetsBrand = ({ withCharts }: { withCharts: boolean }) => {
   const chartOptions = {
     elements: {
       line: {
@@ -66,9 +66,9 @@ const WidgetsBrand = ({ withCharts }) => {
             { title: 'friends', value: '89K' },
             { title: 'feeds', value: '459' },
           ]}
-          style={{
-            '--cui-card-cap-bg': '#3b5998',
-          }}
+            style={{
+              '--cui-card-cap-bg': '#3b5998',
+            } as any}
         />
       </CCol>
 
@@ -104,7 +104,7 @@ const WidgetsBrand = ({ withCharts }) => {
           ]}
           style={{
             '--cui-card-cap-bg': '#00aced',
-          }}
+          }as any}
         />
       </CCol>
 
@@ -140,7 +140,7 @@ const WidgetsBrand = ({ withCharts }) => {
           ]}
           style={{
             '--cui-card-cap-bg': '#4875b4',
-          }}
+          }as any}
         />
       </CCol>
 

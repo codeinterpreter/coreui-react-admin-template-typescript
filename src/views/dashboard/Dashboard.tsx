@@ -228,6 +228,8 @@ const Dashboard: React.FC = () => {
       activity: 'Last week',
     },
   ]
+  const color = getStyle('--cui-info') || '#FFFFFF';
+  const rgbaColor = hexToRgba(color, 10);
 
   return (
     <>
@@ -266,7 +268,7 @@ const Dashboard: React.FC = () => {
               datasets: [
                 {
                   label: 'My First dataset',
-                  backgroundColor: hexToRgba(getStyle('--cui-info'), 10),
+                  backgroundColor: rgbaColor,
                   borderColor: getStyle('--cui-info'),
                   pointHoverBackgroundColor: getStyle('--cui-info'),
                   borderWidth: 2,
@@ -323,10 +325,8 @@ const Dashboard: React.FC = () => {
                 },
                 y: {
                   ticks: {
-                    beginAtZero: true,
                     maxTicksLimit: 5,
                     stepSize: Math.ceil(250 / 5),
-                    max: 250,
                   },
                 },
               },

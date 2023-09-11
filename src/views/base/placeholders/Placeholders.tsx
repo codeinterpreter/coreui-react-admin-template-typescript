@@ -43,20 +43,17 @@ const Placeholders = () => {
                   </CCardBody>
                 </CCard>
                 <CCard style={{ width: '18rem' }}>
-                  <CCardImage
-                    component="svg"
-                    orientation="top"
-                    width="100%"
-                    height="162"
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    aria-label="Placeholder"
-                    preserveAspectRatio="xMidYMid slice"
-                    focusable="false"
-                  >
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                  </CCardImage>
+                  {(CCardImage as any)({
+                    component: "svg",
+                    orientation: "top",
+                    width: "100%",
+                    height: "162",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    role: "img",
+                    "aria-label": "Placeholder",
+                    preserveAspectRatio: "xMidYMid slice",
+                    focusable: "false"
+                  })}
                   <CCardBody>
                     <CPlaceholder component={CCardTitle} animation="glow" xs={7}>
                       <CPlaceholder xs={6} />
@@ -68,13 +65,13 @@ const Placeholders = () => {
                       <CPlaceholder xs={6} />
                       <CPlaceholder xs={8} />
                     </CPlaceholder>
-                    <CPlaceholder
-                      component={CButton}
-                      disabled
-                      href="#"
-                      tabIndex={-1}
-                      xs={6}
-                    ></CPlaceholder>
+                    {(CPlaceholder as any)({
+                      component: {CButton},
+                      disabled: true,
+                      href:"#",
+                      tabIndex:-1,
+                      xs:6
+                    })}
                   </CCardBody>
                 </CCard>
               </div>
@@ -96,14 +93,14 @@ const Placeholders = () => {
               <p aria-hidden="true">
                 <CPlaceholder xs={6} />
               </p>
-              <CPlaceholder
-                component={CButton}
-                aria-hidden="true"
-                disabled
-                href="#"
-                tabIndex={-1}
-                xs={4}
-              ></CPlaceholder>
+              {(CPlaceholder as any)({
+                      component: {CButton},
+                      disabled: true,
+                      href:"#",
+                      tabIndex:-1,
+                      xs:4,
+                 "aria-hidden":"true"
+                    })}
             </DocsExample>
           </CCardBody>
         </CCard>
