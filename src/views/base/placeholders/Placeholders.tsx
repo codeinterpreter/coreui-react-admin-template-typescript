@@ -43,17 +43,17 @@ const Placeholders = () => {
                   </CCardBody>
                 </CCard>
                 <CCard style={{ width: '18rem' }}>
-                  {(CCardImage as any)({
-                    component: "svg",
-                    orientation: "top",
-                    width: "100%",
-                    height: "162",
-                    xmlns: "http://www.w3.org/2000/svg",
-                    role: "img",
-                    "aria-label": "Placeholder",
-                    preserveAspectRatio: "xMidYMid slice",
-                    focusable: "false"
-                  })}
+                  <CCardImage
+                    component="svg"
+                    orientation="top"
+                    width="100%"
+                    height="162"
+                    role="img"
+                    aria-label="Placeholder"
+                  >
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                  </CCardImage>
                   <CCardBody>
                     <CPlaceholder component={CCardTitle} animation="glow" xs={7}>
                       <CPlaceholder xs={6} />
@@ -65,13 +65,11 @@ const Placeholders = () => {
                       <CPlaceholder xs={6} />
                       <CPlaceholder xs={8} />
                     </CPlaceholder>
-                    {(CPlaceholder as any)({
-                      component: {CButton},
-                      disabled: true,
-                      href:"#",
-                      tabIndex:-1,
-                      xs:6
-                    })}
+                    <CPlaceholder
+                      component={CButton}
+                      tabIndex={-1}
+                      xs={6}
+                    ></CPlaceholder>
                   </CCardBody>
                 </CCard>
               </div>
@@ -93,14 +91,12 @@ const Placeholders = () => {
               <p aria-hidden="true">
                 <CPlaceholder xs={6} />
               </p>
-              {(CPlaceholder as any)({
-                      component: {CButton},
-                      disabled: true,
-                      href:"#",
-                      tabIndex:-1,
-                      xs:4,
-                 "aria-hidden":"true"
-                    })}
+              <CPlaceholder
+                component={CButton}
+                aria-hidden="true"
+                tabIndex={-1}
+                xs={4}
+              ></CPlaceholder>
             </DocsExample>
           </CCardBody>
         </CCard>
