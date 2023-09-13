@@ -14,9 +14,9 @@ This repository is an modifications version of the [CoreUI Free React.js Admin T
 
 For a quick setup, clone this repository:
 
-\`\`\`bash
+```bash
 git clone https://github.com/codeinterpreter/coreui-react-admin-template-typescript.git
-\`\`\`
+```
 
 ## Step-by-Step Installation
 
@@ -24,15 +24,15 @@ Once you've cloned the repository, navigate to the project's root directory and 
 
 **Using npm:**
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 **Using Yarn:**
 
-\`\`\`bash
+```bash
 yarn install
-\`\`\`
+```
 
 ## Usage Instructions
 
@@ -40,15 +40,15 @@ To start the development server, simply run:
 
 **Using npm:**
 
-\`\`\`bash
+```bash
 npm start
-\`\`\`
+```
 
 **Using Yarn:**
 
-\`\`\`bash
+```bash
 yarn start
-\`\`\`
+```
 
 Then, navigate to [http://localhost:3000](http://localhost:3000) to see the application in action.
 
@@ -58,21 +58,21 @@ To compile and optimize the project for a production environment, execute:
 
 **Using npm:**
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 **Using Yarn:**
 
-\`\`\`bash
+```bash
 yarn build
-\`\`\`
+```
 
 ## What's Inside
 
 Upon download or cloning, you'll find the following directory layout:
 
-\`\`\`
+```
 coreui-free-react-admin-template-typescript
 ├── public/          # Static files like images, icons, etc.
 │   └── index.html   # Main HTML template
@@ -91,10 +91,10 @@ coreui-free-react-admin-template-typescript
 │   └── store.js     # Redux store example
 │
 └── package.json     # Project metadata and dependencies
-\`\`\`
+```
 
 ## Official Documentation
 
 For advanced customization and more detailed information, visit the CoreUI for React documentation at [CoreUI for React](https://coreui.io/react/).
 
-Feel free to explore, customize, and even contribute to this project. Thank you for choosing this TypeScript-enhanced version of Core UI React Admin Template!
+Feel free to explore, customize, and even contribute to this project. Thank you! 
